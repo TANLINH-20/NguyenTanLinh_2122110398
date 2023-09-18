@@ -33,9 +33,9 @@ namespace NguyenTanLinh_2122110398
             {
                 gender = radioButton2.Text;
             }
-            richTextBox1.Text = "Họ tên: "+textBox1.Text + "'\n'" + 
-                                "Ngày sinh: "+dateTimePicker1.Text + "'\n'" + 
-                                "Giới tinh: "+gender + "'\n'" + 
+            richTextBox1.Text = "Họ tên: "+textBox1.Text + "\n" + 
+                                "Ngày sinh: "+dateTimePicker1.Text + "\n" + 
+                                "Giới tinh: "+gender + "\n" + 
                                 "Khoa: "+comboBox1.Text+"\n";
         }
     }

@@ -28,5 +28,10 @@ namespace NguyenTanLinh_2122110398
             Form2 form2 = new Form2();
             form2.ShowDialog();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
