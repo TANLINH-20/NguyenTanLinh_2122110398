@@ -127,5 +127,13 @@ namespace NguyenTanLinh_2122110398
             }
             return true;
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            listView1.Columns[0].Width = (int)(listView1.Width * 0.25);
+            listView1.Columns[1].Width = (int)(listView1.Width * 0.25);
+            listView1.Columns[2].Width = (int)(listView1.Width * 0.25);
+            listView1.Columns[3].Width = (int)(listView1.Width * 0.25);
+        }
     }
 }
