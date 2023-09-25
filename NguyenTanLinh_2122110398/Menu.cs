@@ -33,5 +33,11 @@ namespace NguyenTanLinh_2122110398
         {
             Application.Exit();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form3 objForm3 = new Form3();
+            objForm3.ShowDialog();
+        }
     }
 }
