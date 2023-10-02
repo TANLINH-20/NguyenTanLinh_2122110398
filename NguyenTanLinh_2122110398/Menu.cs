@@ -39,5 +39,17 @@ namespace NguyenTanLinh_2122110398
             Form3 objForm3 = new Form3();
             objForm3.ShowDialog();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Form4 objForm4 = new Form4();
+            objForm4.ShowDialog();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Form5 objForm5 = new Form5();
+            objForm5.ShowDialog();
+        }
     }
 }
