@@ -30,44 +30,44 @@ namespace NguyenTanLinh_2122110398
         {
             if (txt_id.Text == "")
             {
-                MessageBox.Show("Vui lòng nhập mã nhân viên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Please enter employee code", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txt_id.Focus();
                 return false;
             }
             if (!is_number(txt_id.Text))
             {
-                MessageBox.Show("Vui lòng nhập số cho ô ID", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Please enter a number for the ID box", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txt_id.Clear();
                 txt_id.Focus();
                 return false;
             }
             if (txt_name.Text == "")
             {
-                MessageBox.Show("Vui lòng nhập họ tên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Please enter your full name", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txt_name.Focus();
                 return false;
             }
             if (txt_age.Text == "")
             {
-                MessageBox.Show("Vui lòng nhập số tuổi", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Please enter your age", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txt_age.Focus();
                 return false;
             }
             if (!is_number(txt_age.Text))
             {
-                MessageBox.Show("Vui lòng nhập số cho ô Age", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Please enter a number for the Age box", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txt_age.Clear();
                 txt_age.Focus();
                 return false;
             }
             if (!r_btn_male.Checked && !r_btn_female.Checked)
             {
-                MessageBox.Show("Vui lòng chọn giới tính", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Please select gender", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;
             }
             if (txt_img.Text == "")
             {
-                MessageBox.Show("Vui lòng chọn ảnh", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Please select a photo", "Notifications", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;
             }
             return true;
@@ -75,8 +75,8 @@ namespace NguyenTanLinh_2122110398
 
         private string gender_check()
         {
-            if (r_btn_male.Checked) { return "Nam"; }
-            return "Nữ";
+            if (r_btn_male.Checked) { return "Male"; }
+            return "Female";
         }
 
         private bool is_number(string str)
@@ -117,7 +117,7 @@ namespace NguyenTanLinh_2122110398
             {
                 if (isIDDuplicate(txt_id.Text))
                 {
-                    MessageBox.Show("ID đã tồn tại. Vui lòng chọn một ID khác.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("ID already exists. Please select another ID.", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txt_id.Clear();
                     txt_id.Focus();
                 }
@@ -141,11 +141,11 @@ namespace NguyenTanLinh_2122110398
                 string gender = row.Cells[3].Value != null ? row.Cells[3].Value.ToString() : "";
                 txt_img.Text = row.Cells[4].Value != null ? row.Cells[4].Value.ToString() : "";
                 pb_img.ImageLocation = txt_img.Text;
-                if (gender == "Nam")
+                if (gender == "Male")
                 {
                     r_btn_male.Checked = true;
                 }
-                else if (gender == "Nữ")
+                else if (gender == "Female")
                 {
                     r_btn_female.Checked = true;
                 }
@@ -162,19 +162,26 @@ namespace NguyenTanLinh_2122110398
         {
             if (dtGV_quan_ly.SelectedRows.Count > 0)
             {
-                DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa dòng đã chọn?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult result = MessageBox.Show("Are you sure you want to delete the selected line?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
                     foreach (DataGridViewRow row in dtGV_quan_ly.SelectedRows)
                     {
-                        dtGV_quan_ly.Rows.Remove(row);
+                        if(txt_id.Text != "")
+                        {
+                          dtGV_quan_ly.Rows.Remove(row);
+                        }
+                        else
+                        {
+                            return;
+                        }
                     }
                     clear_info();
                 }
             }
             else
             {
-                MessageBox.Show("Vui lòng chọn ít nhất một dòng để xóa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Please select at least one line to delete", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -182,7 +189,7 @@ namespace NguyenTanLinh_2122110398
         {
             if (dtGV_quan_ly.SelectedRows.Count > 0)
             {
-                DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn sửa dòng đã chọn?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult result = MessageBox.Show("Are you sure you want to edit the selected line?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
                     DataGridViewRow row = dtGV_quan_ly.SelectedRows[0];
@@ -197,13 +204,13 @@ namespace NguyenTanLinh_2122110398
             }
             else
             {
-                MessageBox.Show("Vui lòng chọn một dòng để sửa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Please select a line to edit", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
         private void btn_exit_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn thoát?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("Are you sure you want to exit?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
                 this.Close();
@@ -227,9 +234,14 @@ namespace NguyenTanLinh_2122110398
                 }
                 else
                 {
-                    MessageBox.Show("Kích thước tệp hình ảnh vượt quá 10MB.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Image file size exceeds 10MB.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void btn_clear_Click(object sender, EventArgs e)
+        {
+            clear_info();
         }
     }
 }
