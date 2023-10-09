@@ -214,7 +214,7 @@ namespace NguyenTanLinh_2122110398
         {
             OpenFileDialog dlg = new OpenFileDialog();
             dlg.Title = "Open Image";
-            dlg.Filter = "JPEG files (*.jpg)|*.jpg";
+            dlg.Filter = "Image Files (*.jpg;*.jpeg;*.png)|*.jpg;*.jpeg;*.png";
 
             if (dlg.ShowDialog() == DialogResult.OK)
             {
