@@ -33,6 +33,7 @@
             this.Col_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_age = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_img = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lb_id = new System.Windows.Forms.Label();
             this.lb_name = new System.Windows.Forms.Label();
             this.lb_age = new System.Windows.Forms.Label();
@@ -49,10 +50,9 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.pb_img = new System.Windows.Forms.PictureBox();
-            this.pb_btn_img = new System.Windows.Forms.Button();
-            this.Col_img = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txt_img = new System.Windows.Forms.TextBox();
+            this.pb_btn_img = new System.Windows.Forms.Button();
+            this.pb_img = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtGV_quan_ly)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -109,13 +109,20 @@
             this.Col_gender.Name = "Col_gender";
             this.Col_gender.ReadOnly = true;
             // 
+            // Col_img
+            // 
+            this.Col_img.HeaderText = "Image";
+            this.Col_img.MinimumWidth = 6;
+            this.Col_img.Name = "Col_img";
+            this.Col_img.ReadOnly = true;
+            // 
             // lb_id
             // 
             this.lb_id.AutoSize = true;
             this.lb_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_id.Location = new System.Drawing.Point(6, 34);
             this.lb_id.Name = "lb_id";
-            this.lb_id.Size = new System.Drawing.Size(28, 20);
+            this.lb_id.Size = new System.Drawing.Size(23, 17);
             this.lb_id.TabIndex = 1;
             this.lb_id.Text = "ID";
             // 
@@ -125,7 +132,7 @@
             this.lb_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_name.Location = new System.Drawing.Point(6, 72);
             this.lb_name.Name = "lb_name";
-            this.lb_name.Size = new System.Drawing.Size(57, 20);
+            this.lb_name.Size = new System.Drawing.Size(49, 17);
             this.lb_name.TabIndex = 2;
             this.lb_name.Text = "Name";
             // 
@@ -135,7 +142,7 @@
             this.lb_age.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_age.Location = new System.Drawing.Point(6, 114);
             this.lb_age.Name = "lb_age";
-            this.lb_age.Size = new System.Drawing.Size(41, 20);
+            this.lb_age.Size = new System.Drawing.Size(36, 17);
             this.lb_age.TabIndex = 3;
             this.lb_age.Text = "Age";
             // 
@@ -145,7 +152,7 @@
             this.lb_gender.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_gender.Location = new System.Drawing.Point(6, 155);
             this.lb_gender.Name = "lb_gender";
-            this.lb_gender.Size = new System.Drawing.Size(70, 20);
+            this.lb_gender.Size = new System.Drawing.Size(62, 17);
             this.lb_gender.TabIndex = 4;
             this.lb_gender.Text = "Gender";
             // 
@@ -154,7 +161,7 @@
             this.txt_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_id.Location = new System.Drawing.Point(99, 31);
             this.txt_id.Name = "txt_id";
-            this.txt_id.Size = new System.Drawing.Size(209, 27);
+            this.txt_id.Size = new System.Drawing.Size(209, 23);
             this.txt_id.TabIndex = 5;
             // 
             // txt_name
@@ -162,7 +169,7 @@
             this.txt_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_name.Location = new System.Drawing.Point(99, 69);
             this.txt_name.Name = "txt_name";
-            this.txt_name.Size = new System.Drawing.Size(209, 27);
+            this.txt_name.Size = new System.Drawing.Size(209, 23);
             this.txt_name.TabIndex = 6;
             // 
             // txt_age
@@ -170,7 +177,7 @@
             this.txt_age.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_age.Location = new System.Drawing.Point(99, 111);
             this.txt_age.Name = "txt_age";
-            this.txt_age.Size = new System.Drawing.Size(66, 27);
+            this.txt_age.Size = new System.Drawing.Size(66, 23);
             this.txt_age.TabIndex = 7;
             // 
             // btn_add
@@ -223,7 +230,7 @@
             this.r_btn_male.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.r_btn_male.Location = new System.Drawing.Point(103, 153);
             this.r_btn_male.Name = "r_btn_male";
-            this.r_btn_male.Size = new System.Drawing.Size(66, 24);
+            this.r_btn_male.Size = new System.Drawing.Size(56, 21);
             this.r_btn_male.TabIndex = 13;
             this.r_btn_male.TabStop = true;
             this.r_btn_male.Text = "Male";
@@ -235,7 +242,7 @@
             this.r_btn_female.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.r_btn_female.Location = new System.Drawing.Point(214, 153);
             this.r_btn_female.Name = "r_btn_female";
-            this.r_btn_female.Size = new System.Drawing.Size(85, 24);
+            this.r_btn_female.Size = new System.Drawing.Size(72, 21);
             this.r_btn_female.TabIndex = 14;
             this.r_btn_female.TabStop = true;
             this.r_btn_female.Text = "Female";
@@ -284,14 +291,13 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Photo Card";
             // 
-            // pb_img
+            // txt_img
             // 
-            this.pb_img.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb_img.Location = new System.Drawing.Point(43, 36);
-            this.pb_img.Name = "pb_img";
-            this.pb_img.Size = new System.Drawing.Size(163, 138);
-            this.pb_img.TabIndex = 0;
-            this.pb_img.TabStop = false;
+            this.txt_img.Location = new System.Drawing.Point(228, 149);
+            this.txt_img.Name = "txt_img";
+            this.txt_img.ReadOnly = true;
+            this.txt_img.Size = new System.Drawing.Size(154, 23);
+            this.txt_img.TabIndex = 2;
             // 
             // pb_btn_img
             // 
@@ -305,24 +311,18 @@
             this.pb_btn_img.UseVisualStyleBackColor = true;
             this.pb_btn_img.Click += new System.EventHandler(this.pb_btn_img_Click);
             // 
-            // Col_img
+            // pb_img
             // 
-            this.Col_img.HeaderText = "Image";
-            this.Col_img.MinimumWidth = 6;
-            this.Col_img.Name = "Col_img";
-            this.Col_img.ReadOnly = true;
+            this.pb_img.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pb_img.Location = new System.Drawing.Point(43, 36);
+            this.pb_img.Name = "pb_img";
+            this.pb_img.Size = new System.Drawing.Size(163, 138);
+            this.pb_img.TabIndex = 0;
+            this.pb_img.TabStop = false;
             // 
-            // txt_img
+            // Form6
             // 
-            this.txt_img.Location = new System.Drawing.Point(228, 130);
-            this.txt_img.Name = "txt_img";
-            this.txt_img.ReadOnly = true;
-            this.txt_img.Size = new System.Drawing.Size(154, 27);
-            this.txt_img.TabIndex = 2;
-            // 
-            // Quan_ly_nhan_vien
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(858, 634);
             this.Controls.Add(this.groupBox3);
@@ -334,7 +334,7 @@
             this.Controls.Add(this.btn_add);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "Quan_ly_nhan_vien";
+            this.Name = "Form6";
             this.Text = "Quan Ly Nhan Vien";
             this.Load += new System.EventHandler(this.Quan_ly_nhan_vien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtGV_quan_ly)).EndInit();
